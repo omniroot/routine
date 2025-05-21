@@ -9,5 +9,5 @@ export interface ITask {
   image: string;
   title: string;
   description: string;
-  links: ILink[];
+  links?: ILink[];
 }
