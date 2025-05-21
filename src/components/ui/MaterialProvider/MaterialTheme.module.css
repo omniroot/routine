@@ -11,6 +11,10 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+:global * {
+  -webkit-tap-highlight-color: transparent;
+}
+
 html,
 body {
   font-family: "Open Sans", sans-serif;
