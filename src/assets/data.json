@@ -2,29 +2,15 @@
   "tasks": [
     {
       "id": "make-up-the-bed",
-      "image": "/make-up-the-bed.gif",
+      "image": "/gifs/make-up-the-bed.gif",
       "title": "Заправь кровать",
-      "description": "Заправленная кровать — это первый шаг к организованному дню и ясному уму!",
-      "links": {
-        "youtube": "https://youtube.com/example",
-        "article": "https://example.com/article"
-      }
+      "description": "Заправленная кровать — это первый шаг к организованному дню и ясному уму!"
     },
     {
-      "id": "task_002",
-      "image": "path/to/image2.jpg",
-      "title": "Медитация",
-      "description": "Найди внутренний покой и сосредоточься.",
-      "links": {
-        "youtube": "https://youtube.com/meditation"
-      }
-    },
-    {
-      "id": "task_003",
-      "image": "path/to/image3.jpg",
-      "title": "Чтение книги",
-      "description": "Погрузись в мир знаний и вдохновения!",
-      "links": {}
+      "id": "completed-day",
+      "image": "/gifs/completed-day.gif",
+      "title": "Ты выполнил все свои задачи!",
+      "description": "Теперы ты можешь отдохнуть и заняться чем нибудь интересным!"
     }
   ],
   "templates": [
@@ -33,7 +19,7 @@
       "image": "/images/ayanokoji.png",
       "title": "Аояно Коджи",
       "description": "Упорный труд и настойчивость — твои главные союзники. Ты ставишь перед  собой амбициозные цели и не останавливаешься, пока не достигнешь их.  Каждый шаг — это шаг к успеху, и ты знаешь, что только через усилия  можно добиться желаемого. Включи свою внутреннюю силу и покори день!",
-      "tasks": ["make-up-the-bed", "task_002"]
+      "tasks": ["make-up-the-bed"]
     },
     {
       "id": "rock-li",
