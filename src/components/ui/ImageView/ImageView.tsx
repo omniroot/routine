@@ -6,7 +6,7 @@ import { Portal } from "@ui/Portal/Portal.tsx";
 
 interface IImageViewProps {
   className?: string;
-  src: string;
+  src: string | undefined;
   full?: string;
   allowFullscreen?: boolean;
   loading?: "lazy" | "eager";
