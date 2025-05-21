@@ -14,8 +14,6 @@
 html,
 body {
   font-family: "Open Sans", sans-serif;
-  /* color: var(--md-on-surface) !important; */
-  /* background-color: var(--md-surface) !important; */
   color-scheme: light dark;
 
   scrollbar-width: thin;

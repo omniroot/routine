@@ -198,10 +198,15 @@ export function applyMaterialTheme(
     [`--md-tertiary-container`, baseScheme.tertiaryContainer],
     [`--md-tertiary-fixed`, baseScheme.tertiaryFixed],
     [`--md-tertiary-fixed-dim`, baseScheme.tertiaryFixedDim],
-  ]
-    .map(([name, value]) => `${name}: ${value};`)
-    .join("\n");
+  ];
 
-  element.style.cssText = cssVariables;
+  // const cssText = cssVariables
+  //   .map(([name, value]) => `${name}: ${value};`)
+  //   .join("\n");
+
+  cssVariables.forEach((ell) => {
+    element.style.setProperty(ell[0], ell[1]);
+  });
+
   // console.log("Generated CSS Variables:\n", cssVariables);
 }

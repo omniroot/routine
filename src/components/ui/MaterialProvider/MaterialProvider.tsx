@@ -28,7 +28,7 @@ export const MaterialThemeProvider = ({
   children,
   defaultColor = "#ee715a",
   type = "dark",
-  bg = "surface",
+  bg = "surface_container",
 }: IProps & { children: React.ReactNode }) => {
   const [color, setColor] = useState(() => {
     const savedColor = localStorage.getItem("material-theme-color");
@@ -36,26 +36,23 @@ export const MaterialThemeProvider = ({
   });
 
   useEffect(() => {
+    const html = document.getElementsByTagName("html")[0];
     const scheme = getMaterialScheme(color);
     console.log(`Scheme generated from ${color} color! `, scheme);
-    applyMaterialTheme(scheme, { type });
+    applyMaterialTheme(scheme, { type, element: html });
     localStorage.setItem("material-theme-color", color);
     console.log(getVar(bg));
 
-    document.getElementsByTagName("body")[0].style.color = `${getVar(
-      bg
-    )} !important`;
+    document.getElementsByTagName("body")[0].style.color = `${getVar(bg)} `;
     document.getElementsByTagName("body")[0].style.backgroundColor = `${getVar(
       bg,
       "background"
-    )} !important`;
-    document.getElementsByTagName("html")[0].style.color = `${getVar(
-      bg
-    )} !important`;
+    )} `;
+    document.getElementsByTagName("html")[0].style.color = `${getVar(bg)} `;
     document.getElementsByTagName("html")[0].style.backgroundColor = `${getVar(
       bg,
       "background"
-    )} !important`;
+    )} `;
   }, [bg, color, type]);
 
   const changeColor = (color: string) => {
@@ -77,9 +74,10 @@ export const MaterialThemeProvider = ({
   ) => {
     if (!name) return;
     const convertedName = name.toLocaleLowerCase().replaceAll("_", "-");
-    // console.log({ convertedName });
+    const result = `var(--md-${type === "color" ? "on-" : ""}${convertedName})`;
+    console.log({ convertedName: result });
 
-    return `var(--md-${type === "color" ? "on-" : ""}${convertedName})`;
+    return result;
   };
 
   return (
