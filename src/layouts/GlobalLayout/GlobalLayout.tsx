@@ -1,4 +1,5 @@
 import { useGlobalStore } from "@/store/global.store.ts";
+import { CompletedPage } from "@pages/CompletedPage/CompletedPage.tsx";
 import { HomePage } from "@pages/HomePage/HomePage.tsx";
 import { SettingsPage } from "@pages/SettingsPage/SettingsPage.tsx";
 import { TasksPage } from "@pages/TasksPage/TasksPage.tsx";

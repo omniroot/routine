@@ -1,19 +1,20 @@
-import { templates, useGlobalStore } from "@/store/global.store.ts";
+import { useGlobalStore } from "@/store/global.store.ts";
 import { Button } from "@ui/Button/Button.tsx";
 import { Icon } from "@ui/Icon/Icon.tsx";
 import { TemplateItem } from "@widgets/TemplateItem/TemplateItem.tsx";
 import styles from "./TemplateSelect.module.css";
 import { useLocation } from "wouter";
 import { useState } from "react";
+import { ITemplate } from "@/types/template.types.ts";
 
 export const TemplateSelect = () => {
-  const [activeTemplateId, setActiveTemplateId] = useState("ayanokoji");
-  const { startDay } = useGlobalStore();
+  const { templates, startDay } = useGlobalStore();
+  const [activeTemplate, setActiveTemplate] = useState<ITemplate>(templates[0]);
 
   const [, setLocation] = useLocation();
 
   const onSelectClick = () => {
-    startDay(activeTemplateId);
+    startDay(activeTemplate);
     setLocation("/tasks");
   };
 
@@ -23,8 +24,8 @@ export const TemplateSelect = () => {
         return (
           <TemplateItem
             template={template}
-            active={template.id === activeTemplateId}
-            onClick={() => setActiveTemplateId(template.id)}
+            active={template.id === activeTemplate.id}
+            onClick={() => setActiveTemplate(template)}
           />
         );
       })}
