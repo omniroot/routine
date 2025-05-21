@@ -1,0 +1,49 @@
+.template_item {
+  /* height: fit-content; */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background-color: var(--md-surface-container-high);
+  border-radius: 24px;
+  transition: background-color 250ms, height 250ms;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--md-surface-variant);
+  }
+
+  &.active {
+    /* height: unset; */
+    background-color: var(--md-secondary-container);
+  }
+
+  .image {
+    width: 80px;
+    height: 100%;
+    object-fit: fill;
+    /* aspect-ratio: 16/9; */
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 6px;
+
+    .name {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .active_badge {
+        color: transparent;
+        transition: color 250ms;
+
+        &.actived {
+          color: var(--md-primary);
+        }
+      }
+    }
+  }
+}

@@ -9,7 +9,8 @@ export type IMDColor =
   | "error_container"
   | "surface"
   | "surface_container"
-  | "surface_container_high";
+  | "surface_container_high"
+  | "surface_variant";
 
 export type IMDSize = "large" | "medium" | "small";
 export type IMDFontVariant =

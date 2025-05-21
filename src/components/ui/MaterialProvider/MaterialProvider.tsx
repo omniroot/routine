@@ -1,14 +1,15 @@
-import { createContext, useState, useEffect, useContext } from "react";
-import {
-  getMaterialScheme,
-  applyMaterialTheme,
-} from "./MaterialTheme.utils.ts";
+import { createContext, useContext, useEffect, useState } from "react";
+import "./MaterialTheme.module.css";
 import type { IMDColor } from "./MaterialTheme.types.ts";
-import "./MaterialProvider.module.css";
+import {
+  applyMaterialTheme,
+  getMaterialScheme,
+} from "./MaterialTheme.utils.ts";
 
 interface IProps {
   defaultColor?: string;
   type?: "dark" | "light";
+  bg?: IMDColor;
 }
 
 const MaterialThemeContext = createContext<
@@ -27,6 +28,7 @@ export const MaterialThemeProvider = ({
   children,
   defaultColor = "#ee715a",
   type = "dark",
+  bg = "surface",
 }: IProps & { children: React.ReactNode }) => {
   const [color, setColor] = useState(() => {
     const savedColor = localStorage.getItem("material-theme-color");
@@ -38,7 +40,23 @@ export const MaterialThemeProvider = ({
     console.log(`Scheme generated from ${color} color! `, scheme);
     applyMaterialTheme(scheme, { type });
     localStorage.setItem("material-theme-color", color);
-  }, [color, type]);
+    console.log(getVar(bg));
+
+    document.getElementsByTagName("body")[0].style.color = `${getVar(
+      bg
+    )} !important`;
+    document.getElementsByTagName("body")[0].style.backgroundColor = `${getVar(
+      bg,
+      "background"
+    )} !important`;
+    document.getElementsByTagName("html")[0].style.color = `${getVar(
+      bg
+    )} !important`;
+    document.getElementsByTagName("html")[0].style.backgroundColor = `${getVar(
+      bg,
+      "background"
+    )} !important`;
+  }, [bg, color, type]);
 
   const changeColor = (color: string) => {
     const hexPattern = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;

@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  font-family: "Open Sans", sans-serif;
+  /* color: var(--md-on-surface) !important; */
+  /* background-color: var(--md-surface) !important; */
+  color-scheme: light dark;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--md-primary) var(--md-surface);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  --md-blur: blur(8px);
+}
+
+main {
+  padding: 10px 24px;
+}
+
+/* Material 3 variables  */
+
+body {
+  /* Display */
+  --font-size-display-large: 57px;
+  --font-size-display-medium: 45px;
+  --font-size-display-small: 36px;
+
+  --font-weight-display-large: regular;
+  --font-weight-display-medium: regular;
+  --font-weight-display-small: regular;
+
+  --line-height-display-large: 64px;
+  --line-height-display-medium: 52px;
+  --line-height-display-small: 44px;
+
+  --letter-spacing-display-large: -0.25px;
+  --letter-spacing-display-medium: 0px;
+  --letter-spacing-display-small: 0px;
+
+  /* Headline */
+  --font-size-headline-large: 32px;
+  --font-size-headline-medium: 28px;
+  --font-size-headline-small: 24px;
+
+  --font-weight-headline-large: regular;
+  --font-weight-headline-medium: regular;
+  --font-weight-headline-small: regular;
+
+  --line-height-headline-large: 40px;
+  --line-height-headline-medium: 36px;
+  --line-height-headline-small: 32px;
+
+  --letter-spacing-headline-large: 0px;
+  --letter-spacing-headline-medium: 0px;
+  --letter-spacing-headline-small: 0px;
+
+  /* Title */
+  --font-size-title-large: 22px;
+  --font-size-title-medium: 16px;
+  --font-size-title-small: 14px;
+
+  --font-weight-title-large: regular;
+  --font-weight-title-medium: medium;
+  --font-weight-title-small: medium;
+
+  --line-height-title-large: 28px;
+  --line-height-title-medium: 24px;
+  --line-height-title-small: 20px;
+
+  --letter-spacing-title-large: 0px;
+  --letter-spacing-title-medium: 0.15px;
+  --letter-spacing-title-small: 0.1px;
+
+  /* Body */
+  --font-size-body-large: 16px;
+  --font-size-body-medium: 14px;
+  --font-size-body-small: 12px;
+
+  --font-weight-body-large: regular;
+  --font-weight-body-medium: regular;
+  --font-weight-body-small: regular;
+
+  --line-height-body-large: 24px;
+  --line-height-body-medium: 20px;
+  --line-height-body-small: 16px;
+
+  --letter-spacing-body-large: 0.5px;
+  --letter-spacing-body-medium: 0.25px;
+  --letter-spacing-body-small: 0.4px;
+
+  /* Label */
+  --font-size-label-large: 14px;
+  --font-size-label-medium: 12px;
+  --font-size-label-small: 11px;
+
+  --font-weight-label-large: medium;
+  --font-weight-label-medium: medium;
+  --font-weight-label-small: medium;
+
+  --line-height-label-large: 20px;
+  --line-height-label-medium: 16px;
+  --line-height-label-small: 16px;
+
+  --letter-spacing-label-large: 0.1px;
+  --letter-spacing-label-medium: 0.5px;
+  --letter-spacing-label-small: 0.5px;
+}
+
+/* Material 3 variables end  */
+
+::selection {
+  color: var(--md-on-surface);
+  background-color: var(--md-surface-variant);
+}
+
+a {
+  color: var(--md-primary);
+  text-decoration: none;
+  transition: filter 250ms;
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+}

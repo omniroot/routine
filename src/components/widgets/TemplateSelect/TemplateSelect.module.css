@@ -1,0 +1,9 @@
+.template_select {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .select_button {
+    width: 100%;
+  }
+}

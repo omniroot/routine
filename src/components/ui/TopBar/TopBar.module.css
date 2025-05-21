@@ -1,0 +1,38 @@
+.topbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0px 12px;
+  /* background-color: red; */
+  transition: height 250ms;
+}
+
+.left,
+.center,
+.right {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.left {
+  .left_info {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.right {
+  justify-content: flex-end;
+}
+
+.topbar_small {
+  height: 64px;
+}
+.topbar_medium {
+  height: 120px;
+}
+.topbar_large {
+  height: 152px;
+}
