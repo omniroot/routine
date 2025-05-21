@@ -10,6 +10,7 @@ interface IProps {
   defaultColor?: string;
   type?: "dark" | "light";
   bg?: IMDColor;
+  textColor?: IMDColor;
 }
 
 const MaterialThemeContext = createContext<
@@ -29,6 +30,7 @@ export const MaterialThemeProvider = ({
   defaultColor = "#ee715a",
   type = "dark",
   bg = "surface_container",
+  textColor = "surface",
 }: IProps & { children: React.ReactNode }) => {
   const [color, setColor] = useState(() => {
     const savedColor = localStorage.getItem("material-theme-color");
@@ -43,17 +45,21 @@ export const MaterialThemeProvider = ({
     localStorage.setItem("material-theme-color", color);
     console.log(getVar(bg));
 
-    document.getElementsByTagName("body")[0].style.color = `${getVar(bg)} `;
+    document.getElementsByTagName("body")[0].style.color = `${getVar(
+      textColor
+    )} `;
     document.getElementsByTagName("body")[0].style.backgroundColor = `${getVar(
       bg,
       "background"
     )} `;
-    document.getElementsByTagName("html")[0].style.color = `${getVar(bg)} `;
+    document.getElementsByTagName("html")[0].style.color = `${getVar(
+      textColor
+    )} `;
     document.getElementsByTagName("html")[0].style.backgroundColor = `${getVar(
       bg,
       "background"
     )} `;
-  }, [bg, color, type]);
+  }, [bg, color, textColor, type]);
 
   const changeColor = (color: string) => {
     const hexPattern = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
@@ -75,7 +81,7 @@ export const MaterialThemeProvider = ({
     if (!name) return;
     const convertedName = name.toLocaleLowerCase().replaceAll("_", "-");
     const result = `var(--md-${type === "color" ? "on-" : ""}${convertedName})`;
-    console.log({ convertedName: result });
+    // console.log({ convertedName: result });
 
     return result;
   };
