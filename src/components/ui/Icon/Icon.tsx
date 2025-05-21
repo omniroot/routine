@@ -4,7 +4,13 @@ import styles from "./Icon.module.css";
 import clsx from "clsx";
 
 // Определяем возможные названия иконок
-type IconName = "menu" | "badge-check" | "check" | "settings" | "list"; // Добавьте другие названия по необходимости
+type IconName =
+  | "menu"
+  | "badge-check"
+  | "check"
+  | "settings"
+  | "list"
+  | "circle-stop"; // Добавьте другие названия по необходимости
 
 interface IIconProps
   extends React.DetailedHTMLProps<

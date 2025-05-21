@@ -7,9 +7,9 @@
   transition: background-color 250ms, border-radius 250ms;
   cursor: pointer;
   color: inherit;
-  &:hover {
+  /* &:hover {
     background-color: var(--md-surface-variant);
-  }
+  } */
 
   &:active {
     border-radius: 8px;
